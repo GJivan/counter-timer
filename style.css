@@ -1,0 +1,133 @@
+:root {
+    --primary-bg: #f4f7f6;
+    --text-main: #212529; /* Darker for better contrast */
+    --accent-color: #0056b3; /* Darker blue for WCAG AA (4.5:1 ratio) */
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --font-stack: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --spacing: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack);
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    text-align: center;
+    padding: var(--spacing);
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+#countdown-section {
+    background-color: var(--card-bg);
+    padding: calc(var(--spacing) * 1.5);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+#countdown-title {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+#countdown-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 layout for mobile */
+    gap: var(--spacing);
+    margin: calc(var(--spacing) * 2) 0;
+}
+
+.timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing);
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+}
+
+/* Visually hidden for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#completion-message {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1e7e34;
+}
+
+/* Desktop Enhancements (Mobile-First) */
+@media (min-width: 576px) {
+    #countdown-display {
+        grid-template-columns: repeat(4, 1fr); /* 4 in a row for larger screens */
+    }
+
+    #countdown-section {
+        padding: calc(var(--spacing) * 3);
+    }
+
+    #countdown-title {
+        font-size: 1.5rem;
+    }
+
+    .number {
+        font-size: 2.5rem;
+    }
+}
+
+footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #6c757d;
+}

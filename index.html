@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Countdown timer to April 27, 2026.">
+    <title>Counting Down to April 27, 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Going Home</h1>
+    </header>
+
+    <main>
+        <section id="countdown-section" aria-labelledby="countdown-title">
+            <h2 id="countdown-title">Time remaining until <time datetime="2026-04-27">Monday, April 27, 2026</time>:</h2>
+            
+            <div id="countdown-display" role="timer">
+                <div class="timer-unit">
+                    <span id="days" class="number">--</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="timer-unit">
+                    <span id="hours" class="number">--</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="timer-unit">
+                    <span id="minutes" class="number">--</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="timer-unit">
+                    <span id="seconds" class="number">--</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Visually hidden live region for periodic screen reader updates -->
+            <div id="status-live" class="sr-only" aria-live="polite"></div>
+            
+            <p id="completion-message" class="hidden" aria-hidden="true">It's time! Going home now.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Countdown Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
